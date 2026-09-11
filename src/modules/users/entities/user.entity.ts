@@ -20,20 +20,21 @@ export class User {
 
   @Column({
     type: 'varchar',
+    select: false,
   })
   password: string;
 
   @Column({
     type: 'varchar',
-    unique: true,
+    length: 150,
     name: 'display_name',
   })
   displayName: string;
 
   @Column({
+    type: 'boolean',
     name: 'is_active',
     default: true,
-    type: 'bool',
   })
   isActive: boolean;
 
